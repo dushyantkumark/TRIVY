@@ -11,16 +11,12 @@ sudo apt-get update
 sudo apt-get install trivy
 
 
----COMMANDS---
-
+----------BASIC COMMANDS--------
+#Scanning Docker Image
 trivy image imagename
 
 trivy fs --security-checks vuln,config   Folder_name_OR_Path
 
 trivy image --severity HIGH,CRITICAL image_name
-
-trivy image -f json -o results.json image_name
-
-trivy repo repo-url
-
+#Scanning Kubernetes Cluster
 trivy k8s --report summary cluster
